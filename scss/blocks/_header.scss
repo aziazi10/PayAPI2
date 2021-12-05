@@ -1,129 +1,154 @@
 .header {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background-color: #fff;
+    position: relative;
+    z-index: 1;
 
     &__container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        margin-top: 56px;
      }
 
      &__logo {
-         flex-shrink: 0;
+        flex-shrink: 0;
+     }
+
+     &__logo-img {
+         display: block;
+         margin-right: 40px;
      }
 
      &__btn {
          display: none;
-         width: 24px;
-         height: 11px;
+         width: 28px;
+         height: 17px;
          background: none;
          background-image: url("../img/toggler-open.svg");
          border: none;
      }  
+
+     &__link-btn {
+        display: none;
+        max-width: 252px;
+    }
+}
+
+.close-btn {
+    width: 22px;
+    height: 23px;
+    background-image: url(../img/toggler-close.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
     
 
-
 .sitenav {
+    margin-right: auto;
+
     &__list {
         display: flex;
-        padding: 0;
-        margin: 0;
         list-style-type: none;
     }
 
         &__link {
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            margin: 0 15px;
-            padding: 32px 0;
+            padding-right: 20px;
+            padding-left: 20px;
             text-decoration: none;
-            font-size: 14px;
-            line-height: 16px;
-            letter-spacing: -0.107692px;
-            color: $main-text-color;
-
-            &::before {
-                top: 96%;
-                position: absolute;
-                z-index: 1;
-                display: none;
-                width: 100%;
-                height: 4px;
-                content: "";
-                background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
-            }
-        }
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 18px;
+            color: #36536B;
+            mix-blend-mode: normal;
+            opacity: 0.7; 
 
         &__link:hover {
-            color: $main-dark-text;
-            &::before {
-                display: block;
-            }
+            color: $main-hover-text;
         }
+            
+         &__link:active {
+            color: $main-active-text;
+        }
+    }
+}
+
+
+@include breakpoint-down (768px) {
+    .header {
+        &__container {
+            margin-top: 50px;
+            margin-top: 20px;
+         }
+}
+}
+
+
+@include breakpoint-down (667px) {
+    .header {
+        &__link {
+            display: none;
+        }
+
+        &__btn {
+            display: block;
+        }
+
+        &__logo {
+            margin-right: auto;
+        }
+
+        &__link-btn {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
     }
 
 
+    .sitenav {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        right: 0%;
+        height: 100vh;
+        background: #36536B;
+        width: 80%;
 
-        @media only screen and (max-width:768px) {
-            .header {
-                margin: 22px 0;
-
-                &__link {
-                    display: none;
-                }
-
-                &__container {
-                    padding: 0 24px;
-                }
-
-                &__btn {
-                    display: block;
-                }
-            }
-
-            .close-btn {
-                width: 18px;
-                height: 18px;
-                background-image: url(../img/toggler-close.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-
-            .sitenav {
-                display: none;
-                position: absolute;
-                z-index: 1;
-                top: 100%;
-                left: 0%;
-                width: 100%;
-                height: calc(100vh - 70.4px);
-                background: linear-gradient(180deg, #2D314D 0%, rgba(45, 49, 77, 0.0001) 100%);
-
-                &__list {
-                    padding: 20px 0;
-                    margin-left: auto;
-                    margin-right: auto;
-                    width: 90%;
-                    border-radius: 4px;
-                    margin-top: 24px;
-                    background: #fff;
-                    flex-direction: column;
-                    text-align: center;
-                }
-
-                &__link {
-                    padding: 12px 0;
-                }
-            }
-
-            .sitenav-open {
-                display: block;
-            }
+        &::before { 
+            height: 5px;
+            width: 100px;
         }
+        
+
+        &__list {
+            padding: 32px 0;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &__item {
+            padding-bottom: 22px;
+        }
+
+        &__link {
+            text-align: center;
+            color: #FBFCFE;
+        }
+    }
+
+    .sitenav-open {
+        display: block;
+    }
+}
+
+@include breakpoint-down (320px) {
+    .header {
+       
+     &__link-btn {
+        max-width: 200px;
+    } 
+    }
+}
+
     
+   

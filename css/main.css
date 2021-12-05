@@ -44,7 +44,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   background-color: #fafafa;
-  color: #9597a5;
+  background: #EDF3F8;
 }
 
 img {
@@ -96,12 +96,8 @@ img {
 }
 
 .header {
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  background-color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 .header__container {
@@ -111,9 +107,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin-top: 56px;
 }
 
 .header__logo {
@@ -121,299 +115,123 @@ img {
       flex-shrink: 0;
 }
 
+.header__logo-img {
+  display: block;
+  margin-right: 40px;
+}
+
 .header__btn {
   display: none;
-  width: 24px;
-  height: 11px;
+  width: 28px;
+  height: 17px;
   background: none;
   background-image: url("../img/toggler-open.svg");
   border: none;
+}
+
+.header__link-btn {
+  display: none;
+  max-width: 252px;
+}
+
+.close-btn {
+  width: 22px;
+  height: 23px;
+  background-image: url(../img/toggler-close.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sitenav {
+  margin-right: auto;
 }
 
 .sitenav__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  margin: 0;
   list-style-type: none;
 }
 
 .sitenav__link {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  margin: 0 15px;
-  padding: 32px 0;
+  padding-right: 20px;
+  padding-left: 20px;
   text-decoration: none;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: -0.107692px;
-  color: #9597a5;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  color: #36536B;
+  mix-blend-mode: normal;
+  opacity: 0.7;
 }
 
-.sitenav__link::before {
-  top: 96%;
-  position: absolute;
-  z-index: 1;
-  display: none;
-  width: 100%;
-  height: 4px;
-  content: "";
-  background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
-}
-
-.sitenav__link:hover {
+.sitenav__link__link:hover {
   color: #2D314D;
 }
 
-.sitenav__link:hover::before {
-  display: block;
+.sitenav__link__link:active {
+  color: #212334;
 }
 
 @media only screen and (max-width: 768px) {
-  .header {
-    margin: 22px 0;
+  .header__container {
+    margin-top: 50px;
+    margin-top: 20px;
   }
+}
+
+@media only screen and (max-width: 667px) {
   .header__link {
     display: none;
-  }
-  .header__container {
-    padding: 0 24px;
   }
   .header__btn {
     display: block;
   }
-  .close-btn {
-    width: 18px;
-    height: 18px;
-    background-image: url(../img/toggler-close.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+  .header__logo {
+    margin-right: auto;
+  }
+  .header__link-btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
   .sitenav {
     display: none;
     position: absolute;
     z-index: 1;
     top: 100%;
-    left: 0%;
-    width: 100%;
-    height: calc(100vh - 70.4px);
-    background: -webkit-gradient(linear, left top, left bottom, from(#2D314D), to(rgba(45, 49, 77, 0.0001)));
-    background: linear-gradient(180deg, #2D314D 0%, rgba(45, 49, 77, 0.0001) 100%);
+    right: 0%;
+    height: 100vh;
+    background: #36536B;
+    width: 80%;
+  }
+  .sitenav::before {
+    height: 5px;
+    width: 100px;
   }
   .sitenav__list {
-    padding: 20px 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    border-radius: 4px;
-    margin-top: 24px;
-    background: #fff;
+    padding: 32px 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
   }
+  .sitenav__item {
+    padding-bottom: 22px;
+  }
   .sitenav__link {
-    padding: 12px 0;
+    text-align: center;
+    color: #FBFCFE;
   }
   .sitenav-open {
     display: block;
   }
 }
 
-.intro {
-  background-image: url(../img/intro-img.png);
-  background-repeat: no-repeat;
-  background-position: right calc(50% - 500px) top;
-  background-size: 870px;
-}
-
-.intro__container {
-  overflow-x: hidden;
-  padding-top: 170px;
-  padding-bottom: 170px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.intro__content {
-  max-width: 447px;
-}
-
-.intro__title {
-  margin: 0;
-  margin-bottom: 25px;
-  font-weight: 100;
-  font-size: 56px;
-  line-height: 64px;
-  color: #2D314D;
-  letter-spacing: -1;
-}
-
-.intro__text {
-  margin: 0;
-  margin-bottom: 36px;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.28125px;
-}
-
-@media only screen and (max-width: 1024px) {
-  .intro {
-    background-size: 600px;
-    background-position: right -200px center;
-  }
-  __container {
-    padding-top: 110px;
-  }
-  __title {
-    font-size: 46px;
-    line-height: 54px;
-  }
-  __text {
-    font-size: 15px;
-    line-height: 20px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .intro {
-    background-image: url(../img/phones.png);
-    background-position: left -150px top -270px;
-    background-size: 1500px;
-  }
-  .intro__container {
-    padding-top: 450px;
-    padding-bottom: 90px;
-  }
-  .intro__content {
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .intro__title {
-    font-size: 40px;
-    line-height: 47px;
-  }
-  .intro__text {
-    font-size: 15px;
-    line-height: 25px;
-  }
-  .intro__link {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  .intro {
-    background-image: url(../img/phones.png);
-    background-position: left -110px top -150px;
-    background-size: 1000px;
-  }
-  .intro__container {
-    padding-top: 330px;
-    padding-bottom: 90px;
-  }
-}
-
-.banking__title {
-  font-weight: 100;
-  font-size: 40px;
-  line-height: 64px;
-  letter-spacing: -0.714286px;
-  color: #2D314D;
-  padding-bottom: 16px;
-}
-
-.banking__text {
-  width: 635px;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.28125px;
-  padding-bottom: 72px;
-}
-
-.banking__list {
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.banking__item {
-  width: 255px;
-  height: 278px;
-  margin-right: 15px;
-  margin-left: 15px;
-}
-
-.banking__img {
-  display: block;
-  padding-bottom: 40px;
-}
-
-.banking__title-box {
-  font-weight: 100;
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: -0.428571px;
-  color: #2D314D;
-  padding-bottom: 26px;
-}
-
-.banking__text-box {
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: -0.25px;
-}
-
-@media only screen and (max-width: 850px) {
-  .banking__title {
-    font-weight: 100;
-    font-size: 30px;
-    line-height: 50px;
-    padding-bottom: 16px;
-  }
-  .banking__text {
-    width: 600px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .banking__list:nth-child(3), .banking__list:nth-child(4) {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .banking__list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .banking__item {
-    width: 250px;
-    height: 250px;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-bottom: 35px;
-  }
-  .banking__img {
-    display: block;
-    padding-bottom: 40px;
-  }
-  .banking__title-box {
-    font-weight: 100;
-    font-size: 18px;
-    line-height: 20px;
-    padding-bottom: 20px;
-  }
-  .banking__text-box {
-    font-size: 10px;
-    line-height: 20px;
+@media only screen and (max-width: 320px) {
+  .header__link-btn {
+    max-width: 200px;
   }
 }
 /*# sourceMappingURL=main.css.map */
