@@ -1,101 +1,88 @@
 .banking {
-    &__title {
-        font-weight: 100;
-        font-size: 40px;
-        line-height: 64px;
-        letter-spacing: -0.714286px;
-        color: #2D314D;
-        padding-bottom: 16px;
-    }
-
-    &__text {
-        width: 635px;
-        font-size: 18px;
-        line-height: 28px;
-        letter-spacing: -0.28125px;
-        padding-bottom: 72px;
-    }
-
+    padding-bottom: 96px;
     &__list {
         list-style-type: none;
         display: flex;
     }
 
     &__item {
-        width: 255px;
-        height: 278px;
+        width: 350px;
+        text-align: center;
         margin-right: 15px;
         margin-left: 15px;
     }
 
     &__img {
-        display: block;
-        padding-bottom: 40px;
+        margin-bottom: 32px;
     }
 
-    &__title-box {
-        font-weight: 100;
-        font-size: 24px;
-        line-height: 28px;
-        letter-spacing: -0.428571px;
-        color: #2D314D;
-        padding-bottom: 26px;
-    }
-
-    &__text-box {
-        font-size: 16px;
-        line-height: 26px;
-        letter-spacing: -0.25px;
-    }
-}
-
-@include breakpoint-down (850px) {
-    .banking {
-        &__title {
-            font-weight: 100;
-            font-size: 30px;
-            line-height: 50px;
-            padding-bottom: 16px;
-        }
-
-        &__text {
-            width: 600px;
-            font-size: 14px;
-            line-height: 20px;
-        }
-
-        &__list:nth-child(3), 
-        &__list:nth-child(4){
-            flex-wrap: wrap;
-    }
-
-    &__list {
-        justify-content: center;
-    }
-
-    &__item {
-        width: 250px;
-        height: 250px;
-        margin-right: 20px;
-        margin-left: 20px;
-        margin-bottom: 35px;
-    }
-
-    &__img {
-        display: block;
-        padding-bottom: 40px;
-    }
-
-    &__title-box {
-        font-weight: 100;
+    &__title {
+        font-weight: bold;
         font-size: 18px;
-        line-height: 20px;
-        padding-bottom: 20px;
+        line-height: 25px;
+        text-align: center;
+        letter-spacing: -0.138462px;
+        color: $main-text-color;
+        margin-bottom: 16px;
     }
 
-    &__text-box {
-        font-size: 10px;
-        line-height: 20px;
+    &__text {
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+        letter-spacing: -0.115385px;
+        color: $main-paragraph-color;
     }
 }
+
+@include breakpoint-down(768px) {
+    .banking {
+        padding-bottom: 100px;
+
+        &__item {
+            width: 223px;
+            text-align: center;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    
+        &__img {
+            width: 88px;
+            height: 88px;
+        }
+
+        &__title {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    
+        &__text {
+            font-size: 12px;
+            line-height: 22px;
+        }
+    }
+}
+
+@include breakpoint-down(425px) {
+    .banking {
+        padding-bottom: 80px;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        &__item {
+            width: 328px;
+            margin-bottom: 48px;
+        }
+    
+        &__img {
+            margin-bottom: 33px;
+            width: 106px;
+            height: 106px;
+        }
+    
+        
+    }
 }
