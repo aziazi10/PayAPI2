@@ -107,8 +107,10 @@
         position: absolute;
         z-index: 1;
         top: 0;
+        width: 500px;
     }
 }
+
 
 @include breakpoint-down(430px) {
     .intro {
@@ -165,6 +167,6 @@
     
     .intro-mobile {
         display: block;
-        width: 390px;
+        width: 350px;
     }
 }
