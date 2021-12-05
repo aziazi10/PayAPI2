@@ -1,108 +1,170 @@
 .intro {
-    background-image: url(../img/intro-img.png);
-    background-repeat: no-repeat;
-    background-position: right calc(50% - 500px) top;
-    background-size: 870px;
-
+    position: relative;
+    z-index: 1;
     &__container {
-        overflow-x: hidden;
-        padding-top: 170px;
-        padding-bottom: 170px;
         display: flex;
+        padding-top: 160px;
     }
 
-    &__content {
-        max-width: 447px;
-    }
-
-    &__title {
-        margin: 0;
-        margin-bottom: 25px;
-        font-weight: 100;
-        font-size: 56px;
-        line-height: 64px;
-        color: $main-dark-text;
-        letter-spacing: -1;
-    }
-
-    &__text {
-        margin: 0;
-        margin-bottom: 36px;
-        font-size: 18px;
-        line-height: 28px;
-        letter-spacing: -0.28125px;
-    }
-}
-
-
-@include breakpoint-down (1024px) {
-    .intro {
-        background-size: 600px;
-        background-position: right -200px center;
-    }
-
-    &__container {
-        padding-top: 110px;
+    &__img {
+        position: absolute;
+        z-index: 1;
+        right: -141px;
+        top: -181px;
     }
 
     &__title {
-        font-size: 46px;
-        line-height: 54px;
+        width: 546px;
+        font-size: 72px;
+        line-height: 72px;
+        letter-spacing: -0.553846px;
+        color: $main-text-color;
+        padding-bottom: 42px;
+    }
+
+    &__form {
+        position: relative;
+        z-index: 1;
+        border: none;
+        width: 445px;
+        height: 48px;
+        display: flex;
+        margin-bottom: 16px;
+    }
+
+    &__input {
+        padding: 16px;
+        border: none;
+        width: 445px;
+        background: #fbfcfe;
+        box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+        border-radius: 24px;
     }
 
     &__text {
         font-size: 15px;
-        line-height: 20px;
+        line-height: 18px;
+        color: $main-paragraph-color;
+        margin-bottom: 151px;
     }
 }
 
-@include breakpoint-down (768px) {
+.intro-mobile {
+    display: none;
+}
+
+.form-link {
+    position: absolute;
+    border: none;
+    right: 0%;
+}
+
+@include breakpoint-down(1082px) {
     .intro {
-        background-image: url(../img/phones.png);
-        background-position: left -150px top -270px;
-        background-size: 1500px;
-    
-
-    &__container {
-        padding-top: 450px;
-        padding-bottom: 90px;
-    }
-
-    &__content {
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-
-    &__title {
-        font-size: 40px;
-        line-height: 47px;
-    }
-
-    &__text {
-        font-size: 15px;
-        line-height: 25px;
-    }
-
-    &__link {
-        margin-left: auto;
-        margin-right: auto;
-    }
+        &__img {
+            position: absolute;
+            z-index: 1;
+            right: -400px;
+            top: -181px;
+        }
     }
 }
 
-@include breakpoint-down (425px) {
+@include breakpoint-down(768px) {
     .intro {
-        background-image: url(../img/phones.png);
-        background-position: left -110px top -150px;
-        background-size: 1000px;
-    
+        &__img {
+            display: none;
+        }
 
-    &__container { 
-        padding-top: 330px;
-        padding-bottom: 90px;
+        &__title {
+            font-family: DM Serif Display;
+            margin-top: 250px;
+            width: 546px;
+            padding-bottom: 42px;
+            font-size: 48px;
+            line-height: 56px;
+            letter-spacing: -0.369231px;
+            text-align: center;
+        }
+
+        &__form {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__text {
+            margin-bottom: 99px;
+            text-align: center;
+        }
     }
+
+    .form-link {
+        display: block;
+    }
+
+    .intro-mobile {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
     }
 }
 
+@include breakpoint-down(430px) {
+    .intro {
+        position: relative;
+        z-index: 1;
+        &__container {
+            display: flex;
+            padding-top: 160px;
+        }
+    
+        &__img {
+            position: absolute;
+            z-index: 1;
+            right: -141px;
+            top: -181px;
+        }
+    
+        &__title {
+            width: 315px;
+            height: 108px;
+            font-size: 28px;
+            line-height: 36px;
+            text-align: center;
+            letter-spacing: -0.246154px;
+            padding-bottom: 24px;
+        }
+    
+        &__form {
+            display: block;
+            position: relative;
+            z-index: 1;
+            border: none;
+            width: 327px;
+            height: 48px;
+            margin-bottom: 24px;
+        }
+    
+        &__input {
+            width: 327px;
+            margin-bottom: 16px;
+        }
+    
+        &__text {
+            margin-bottom: 100px;
+            margin-top: 75px;
+        }
+    }
+
+    .form-link {
+        max-width: 327px;
+        height: 48px;
+        widows: 100%;
+    }
+    
+    .intro-mobile {
+        display: block;
+        width: 390px;
+    }
+}
