@@ -33,7 +33,7 @@
 
     &__link {
         display: block;
-        width: 130px;
+        width: 131px;
         height: 48px;
         border: 1px solid #fbfcfe;
         box-sizing: border-box;
@@ -47,6 +47,11 @@
         color: #fbfcfe;
         padding: 16px 32px;
         text-decoration: none;
+
+        &__link:active {
+            background-color: #fff;
+            color: #1B262F;
+        }
     }
 
     &__list {

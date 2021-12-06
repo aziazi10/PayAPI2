@@ -6,27 +6,27 @@
         display: flex;
         align-items: center;
         margin-top: 56px;
-     }
+    }
 
-     &__logo {
+    &__logo {
         flex-shrink: 0;
-     }
+    }
 
-     &__logo-img {
-         display: block;
-         margin-right: 40px;
-     }
+    &__logo-img {
+        display: block;
+        margin-right: 40px;
+    }
 
-     &__btn {
-         display: none;
-         width: 28px;
-         height: 17px;
-         background: none;
-         background-image: url("../img/toggler-open.svg");
-         border: none;
-     }  
+    &__btn {
+        display: none;
+        width: 28px;
+        height: 17px;
+        background: none;
+        background-image: url("../img/toggler-open.svg");
+        border: none;
+    }
 
-     &__link-btn {
+    &__link-btn {
         display: none;
         max-width: 252px;
     }
@@ -39,7 +39,6 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-    
 
 .sitenav {
     margin-right: auto;
@@ -49,39 +48,53 @@
         list-style-type: none;
     }
 
-        &__link {
-            padding-right: 20px;
-            padding-left: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            line-height: 18px;
-            color: $main-text-color;
-            mix-blend-mode: normal;
-            opacity: 0.7; 
+    &__link {
+        padding-right: 20px;
+        padding-left: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        color: $main-text-color;
+        mix-blend-mode: normal;
+        opacity: 0.7;
 
         &__link:hover {
             color: $main-hover-text;
         }
-            
-         &__link:active {
+
+        &__link:active {
             color: $main-active-text;
         }
     }
 }
 
-
-@include breakpoint-down (768px) {
+@include breakpoint-down(768px) {
     .header {
         &__container {
-            margin-top: 50px;
-            margin-top: 20px;
-         }
-}
+            margin-top: 10px;
+        }
+
+        &__logo-img {
+            display: block;
+            margin-right: 5px;
+        }
+
+        &__link {
+            padding-right: 5px;
+            padding-left: 5px;
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            color: $main-text-color;
+            mix-blend-mode: normal;
+            opacity: 0.7;
+        }
+    }
 }
 
-
-@include breakpoint-down (667px) {
+@include breakpoint-down(625px) {
     .header {
         &__link {
             display: none;
@@ -100,9 +113,7 @@
             margin-right: auto;
             margin-left: auto;
         }
-
     }
-
 
     .sitenav {
         display: none;
@@ -114,11 +125,10 @@
         background: $main-text-color;
         width: 80%;
 
-        &::before { 
+        &::before {
             height: 5px;
             width: 100px;
         }
-        
 
         &__list {
             padding: 32px 0;
@@ -132,7 +142,7 @@
 
         &__link {
             text-align: center;
-            color: #FBFCFE;
+            color: #fbfcfe;
         }
     }
 
@@ -141,14 +151,10 @@
     }
 }
 
-@include breakpoint-down (320px) {
+@include breakpoint-down(320px) {
     .header {
-       
-     &__link-btn {
-        max-width: 200px;
-    } 
+        &__link-btn {
+            max-width: 200px;
+        }
     }
 }
-
-    
-   
