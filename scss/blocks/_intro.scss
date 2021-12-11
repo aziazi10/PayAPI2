@@ -1,21 +1,23 @@
 .intro {
+    background-image: url(../img/intro-img.svg);
+    background-repeat: no-repeat;
+    background-position: top -172px right calc(50% - 455px);
     position: relative;
     z-index: 1;
+    padding-bottom: 151px;
+    padding-top: 240px;
+
     &__container {
         display: flex;
-        padding-top: 160px;
     }
 
-    &__img {
-        position: absolute;
-        z-index: 1;
-        right: -141px;
-        top: -181px;
+    &__content {
+        max-width: 546px;
     }
 
     &__title {
+        margin: 0;
         font-family: "DM Serif Display";
-        width: 546px;
         font-size: 72px;
         line-height: 72px;
         letter-spacing: -0.553846px;
@@ -27,16 +29,18 @@
         position: relative;
         z-index: 1;
         border: none;
-        width: 445px;
+        max-width: 445px;
+        width: 100%;
         height: 48px;
         display: flex;
         margin-bottom: 16px;
     }
 
     &__input {
-        padding: 16px;
+        padding: 15px 27px;
+        padding-right: 180px;
         border: none;
-        width: 445px;
+        width: 100%;
         background: #fbfcfe;
         box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
         border-radius: 24px;
@@ -46,12 +50,7 @@
         font-size: 15px;
         line-height: 18px;
         color: $main-paragraph-color;
-        margin-bottom: 151px;
     }
-}
-
-.intro-mobile {
-    display: none;
 }
 
 .form-link {
@@ -60,32 +59,21 @@
     right: 0%;
 }
 
-@include breakpoint-down(1082px) {
-    .intro {
-        &__img {
-            position: absolute;
-            z-index: 1;
-            right: -400px;
-            top: -181px;
-        }
-    }
-}
-
 @include breakpoint-down(768px) {
     .intro {
-        &__img {
-            display: none;
+        padding-top: 484px;
+        text-align: center;
+        background-image: url(../img/intro-mobile.svg);
+        background-position: center top;
+
+        &__content {
+            margin-left: auto;
+            margin-right: auto;
         }
 
         &__title {
-            font-family: "DM Serif Display";
-            margin-top: 250px;
-            width: 546px;
-            padding-bottom: 42px;
             font-size: 48px;
             line-height: 56px;
-            letter-spacing: -0.369231px;
-            text-align: center;
         }
 
         &__form {
@@ -98,76 +86,31 @@
             text-align: center;
         }
     }
-
-    .form-link {
-        display: block;
-    }
-
-    .intro-mobile {
-        display: block;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        width: 500px;
-    }
 }
 
-
-@include breakpoint-down(430px) {
+@include breakpoint-down(425px) {
     .intro {
-        position: relative;
-        z-index: 1;
-        &__container {
-            display: flex;
-            padding-top: 160px;
-        }
-    
-        &__img {
-            position: absolute;
-            z-index: 1;
-            right: -141px;
-            top: -181px;
-        }
-    
+
         &__title {
-            width: 315px;
-            height: 108px;
-            font-size: 28px;
+            font-size: 32px;
             line-height: 36px;
-            text-align: center;
-            letter-spacing: -0.246154px;
-            padding-bottom: 24px;
         }
-    
+
+        &__text {
+            font-size: 12px;
+        }
+
         &__form {
-            display: block;
-            position: relative;
-            z-index: 1;
-            border: none;
-            width: 327px;
-            height: 48px;
-            margin-bottom: 24px;
+            flex-direction: column;
         }
-    
+
         &__input {
-            width: 327px;
+            padding-right: 26px;
             margin-bottom: 16px;
         }
-    
-        &__text {
-            margin-bottom: 100px;
-            margin-top: 75px;
-        }
-    }
 
-    .form-link {
-        max-width: 327px;
-        height: 48px;
-        widows: 100%;
-    }
-    
-    .intro-mobile {
-        display: block;
-        width: 350px;
+        .form-link {
+            position: relative;
+        }
     }
 }
