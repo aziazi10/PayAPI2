@@ -5,16 +5,12 @@
     &__container {
         display: flex;
         align-items: center;
-        margin-top: 56px;
+        margin-top: 40px;
     }
 
     &__logo {
         flex-shrink: 0;
-    }
-
-    &__logo-img {
-        display: block;
-        margin-right: 40px;
+        margin-right: 44px;
     }
 
     &__btn {
@@ -24,20 +20,13 @@
         background: none;
         background-image: url("../img/toggler-open.svg");
         border: none;
+        margin-left: auto;
     }
 
     &__link-btn {
         display: none;
         max-width: 252px;
     }
-}
-
-.close-btn {
-    width: 22px;
-    height: 23px;
-    background-image: url(../img/toggler-close.png);
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .sitenav {
@@ -56,45 +45,19 @@
         font-size: 15px;
         line-height: 18px;
         color: $main-text-color;
-        mix-blend-mode: normal;
         opacity: 0.7;
 
-        &__link:hover {
-            color: $main-hover-text;
-        }
-
-        &__link:active {
-            color: $main-active-text;
+        &:active {
+            opacity: 1;
         }
     }
+}
+
+.menu {
+    display: none;
 }
 
 @include breakpoint-down(768px) {
-    .header {
-        &__container {
-            margin-top: 10px;
-        }
-
-        &__logo-img {
-            display: block;
-            margin-right: 5px;
-        }
-
-        &__link {
-            padding-right: 5px;
-            padding-left: 5px;
-            text-decoration: none;
-            font-weight: normal;
-            font-size: 15px;
-            line-height: 18px;
-            color: $main-text-color;
-            mix-blend-mode: normal;
-            opacity: 0.7;
-        }
-    }
-}
-
-@include breakpoint-down(625px) {
     .header {
         &__link {
             display: none;
@@ -102,10 +65,6 @@
 
         &__btn {
             display: block;
-        }
-
-        &__logo {
-            margin-right: auto;
         }
 
         &__link-btn {
@@ -117,44 +76,78 @@
 
     .sitenav {
         display: none;
-        position: absolute;
-        z-index: 1;
-        top: 100%;
-        right: 0%;
+    }
+
+    .menu {
+        padding: 48px 24px;
+        width: 85%;
         height: 100vh;
-        background: $main-text-color;
-        width: 80%;
+        top: -40px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        display: none;
+        z-index: 1;
+        right: 0;
+        background-color: #1B262F;
 
-        &::before {
-            height: 5px;
-            width: 100px;
+        &__btn {
+            margin-bottom: 24px;
+            margin-left: auto;
+            width: 22px;
+            height: 23px;
+            border: none;
+            background: none;
+            background-image: url(../img/toggler-close.png);
+            background-repeat: no-repeat;
         }
 
-        &__list {
-            padding: 32px 0;
-            flex-direction: column;
+        &__line {
+            width: 100%;
+            border: none;
+            height: 1px;
+            background-color: #FBFCFE;
+            opacity: 0.15;
+        }
+
+        &__nav-list {
+            list-style-type: none;
             text-align: center;
+            margin-top: 43px;
         }
 
-        &__item {
-            padding-bottom: 22px;
+        // &__nav-item {
+        //     margin-bottom: 32px;
+        // }
+
+        &__nav-link {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 23px;
+            text-align: center;
+            color: #FBFCFE;
+            opacity: 0.7;
         }
 
         &__link {
             text-align: center;
-            color: #fbfcfe;
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 
-    .sitenav-open {
-        display: block;
+    .menu-open {
+        display: flex;
+        right: 0;
     }
 }
 
-@include breakpoint-down(320px) {
-    .header {
-        &__link-btn {
-            max-width: 200px;
-        }
-    }
-}
+    // @include breakpoint-down(320px) {
+    //     .header {
+    //         &__link-btn {
+    //             max-width: 200px;
+    //         }
+    //     }
+    // }
+
