@@ -67,60 +67,7 @@
     }
 }
 
-@include breakpoint-down(768px) {
-    .about {
-        position: relative;
-        z-index: 1;
-        &__container {
-            display: flex;
-            padding-top: 100px;
-            padding-bottom: 100px;
-            align-items: center;
-        }
-
-        &__title {
-            margin-bottom: 24px;
-            margin-top: 94px;
-            text-align: center;
-            font-size: 32px;
-            line-height: 36px;
-        }
-
-        &__text {
-            width: 327px;
-            height: 112px;
-            font-size: 15px;
-            line-height: 28px;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        &__link {
-            display: block;
-            padding: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        &__list {
-            position: absolute;
-            top: 0%;
-            // left: 10%;
-        }
-
-        &__item {
-            margin-right: 30px;
-            margin-bottom: 44px;
-        }
-
-        &__img {
-            width: 127px;
-            height: 17px;
-        }
-    }
-}
-
-@include breakpoint-down(425px) {
+@include breakpoint-down(925px) {
     .about {
         position: relative;
         z-index: 1;
@@ -133,46 +80,73 @@
             align-items: center;
         }
 
+        &__content {
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center;
+        }
+
         &__title {
-            margin-bottom: 24px;
             margin-top: 94px;
-            width: 327px;
             text-align: center;
             font-size: 32px;
             line-height: 36px;
-            margin-left: -45px;
         }
 
         &__text {
-            margin-left: -45px;
-            width: 327px;
             height: 140px;
-            margin-bottom: 60px;
             text-align: center;
         }
 
         &__link {
             padding: 10px;
-            align-items: center;
-            margin-left: 75px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         &__list {
             position: absolute;
             top: 0%;
+            width: 700px;
         }
 
         &__item {
-            margin-left: -40px;
+            margin-left: -5px;
             width: 107px;
             height: 15px;
             margin-right: 95px;
             margin-bottom: 45px;
         }
+    }
+}
 
-        &__img {
-            width: 127px;
-            height: 17px;
+@include breakpoint-down(655px) {
+    .about {
+
+        &__content {
+            margin-top: 55px;
+        }
+
+        &__title {
+            font-size: 28px;
+            line-height: 34px;
+        }
+
+        &__text {
+            height: 140px;
+            text-align: center;
+        }
+
+        &__link {
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__list {
+            position: absolute;
+            top: -5%;
+            width: 500px;
         }
     }
 }
