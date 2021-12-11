@@ -38,41 +38,9 @@
 }
 }
 
-@include breakpoint-down(768px) {
-    .start {
-        padding-bottom: 100px;
 
-        &__container {
-            display: block;
-        }
-    
-        &__title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-    
-        &__input {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    
-        &__form {
-            position: relative;
-            z-index: 1;
-            display: flex;
-        }
-    
-        .start-link {
-            position: absolute;
-            z-index: 1;
-            right: 130px;
-            border: none;
-            padding: 15px;
-    }
-    }
-}
 
-@include breakpoint-down(425px) {
+@include breakpoint-down(824px) {
     .start {
         padding-bottom: 80px;
 
@@ -93,9 +61,8 @@
         }
     
         &__input {
+            position: relative;
             width: 327px;
-            margin-right: auto;
-            margin-left: auto;
             margin-bottom: 16px;
         }
     
@@ -110,3 +77,30 @@
     }
 }
 
+@include breakpoint-down(768px) {
+    .start {
+        padding-bottom: 100px;
+
+        &__container {
+            display: block;
+        }
+    
+        &__title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    
+        &__input {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        &__form {
+            flex-direction: column;
+        }
+    
+        .start-link {
+            position: relative;
+    }
+    }
+}
